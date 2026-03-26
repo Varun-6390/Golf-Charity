@@ -35,16 +35,24 @@ async function seedAdminsIfNeeded() {
 }
 
 async function main() {
-  console.log("Starting server...");
+  console.log("🚀 Step 1: Starting server...");
 
-  await connectToMongo();
-  console.log("MongoDB connected ✅");
+  try {
+    await connectToMongo();
+    console.log("✅ Step 2: MongoDB connected");
+  } catch (err) {
+    console.error("❌ MongoDB failed:", err);
+  }
 
-  await seedAdminsIfNeeded();
-  console.log("Seeding done ✅");
+  try {
+    await seedAdminsIfNeeded();
+    console.log("✅ Step 3: Seeding done");
+  } catch (err) {
+    console.error("❌ Seeding failed:", err);
+  }
 
   app.listen(PORT, () => {
-    console.log(`API listening on port ${PORT}`);
+    console.log(`🔥 Step 4: API listening on port ${PORT}`);
   });
 }
 
