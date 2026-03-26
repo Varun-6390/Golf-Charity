@@ -36,13 +36,19 @@ async function seedAdminsIfNeeded() {
 }
 
 async function main() {
+ async function main() {
+  console.log("Starting server...");
+
   await connectToMongo();
+  console.log("MongoDB connected ✅");
+
   await seedAdminsIfNeeded();
+  console.log("Seeding done ✅");
 
   app.listen(PORT, () => {
-    // eslint-disable-next-line no-console
     console.log(`API listening on port ${PORT}`);
   });
+}
 }
 
 main().catch((err) => {
