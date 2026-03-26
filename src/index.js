@@ -38,7 +38,7 @@ async function main() {
   await connectToMongo();
   await seedAdminsIfNeeded();
 
-  app.listen(env.PORT || 5000, () => {
+  app.listen((env.PORT || 5000), () => {
     // eslint-disable-next-line no-console
     console.log(`API listening on port ${env.PORT}`);
   });
