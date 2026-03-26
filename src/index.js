@@ -36,7 +36,6 @@ async function seedAdminsIfNeeded() {
 }
 
 async function main() {
- async function main() {
   console.log("Starting server...");
 
   await connectToMongo();
@@ -48,7 +47,6 @@ async function main() {
   app.listen(PORT, () => {
     console.log(`API listening on port ${PORT}`);
   });
-}
 }
 
 main().catch((err) => {
