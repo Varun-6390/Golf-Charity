@@ -1,0 +1,21 @@
+--- DRAW INFO ---
+Month: 2026-03
+ID: 69c4f2181dd6a6bd9c2b5905
+Status: published
+Numbers: [29,32,37,41,45]
+
+--- ELIGIBILITIES ---
+Count: 2
+- User: printify2412@gmail.com, MatchCount: 3, UserID: 69c4d98734a82b8bff5282ce, DrawID: 69c4f2181dd6a6bd9c2b5905
+- User: artistvarunlko@gmail.com, MatchCount: 5, UserID: 69c4d82da4b15b0f31269a8a, DrawID: 69c4f2181dd6a6bd9c2b5905
+
+--- ALL USERS & SCORES ---
+- artistvarunlko@gmail.com (subscriber) | ID: 69c4d82da4b15b0f31269a8a | Sub Status: active
+  Latest Scores: [32, 29, 37, 41, 45] | Match Count: 5
+  In WinnerEligibility DB: YES (5)
+- www.sharmavarun6.com@gmail.com (admin) | ID: 69c4d8a134a82b8bff5282ab | Sub Status: active
+  Latest Scores: [] | Match Count: 0
+  In WinnerEligibility DB: NO
+- printify2412@gmail.com (subscriber) | ID: 69c4d98734a82b8bff5282ce | Sub Status: active
+  Latest Scores: [36, 45, 29, 40, 32] | Match Count: 3
+  In WinnerEligibility DB: YES (3)
