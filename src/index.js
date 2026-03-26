@@ -5,6 +5,7 @@ const { connectToMongo } = require("./db/connect");
 const { app } = require("./app");
 const bcrypt = require("bcrypt");
 const User = require("./models/User");
+const PORT = process.env.PORT || 5000;
 
 async function seedAdminsIfNeeded() {
   if (!env.ADMIN_SEED_EMAILS || !env.ADMIN_SEED_PASSWORD) return;
@@ -38,9 +39,9 @@ async function main() {
   await connectToMongo();
   await seedAdminsIfNeeded();
 
-  app.listen((env.PORT || 5000), () => {
+  app.listen(PORT, () => {
     // eslint-disable-next-line no-console
-    console.log(`API listening on port ${env.PORT}`);
+    console.log(`API listening on port ${PORT}`);
   });
 }
 
