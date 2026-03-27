@@ -14,7 +14,12 @@ function getCurrentMonthKeyUTC() {
 router.get("/current", async (_req, res) => {
   const monthKey = getCurrentMonthKeyUTC();
   const draw = await MonthlyDraw.findOne({ monthKey, status: "published" }).lean();
-  if (!draw) return res.status(404).json({ error: "No published draw for current month" });
+  if (!draw) {
+  return res.json({
+    message: "No draw yet",
+    data: null
+  });
+}
 
   return res.json({
     id: draw._id,
