@@ -34,8 +34,8 @@ router.post("/create-checkout-session", requireAuth, async (req, res) => {
   const priceId = plan === "monthly" ? env.STRIPE_PRICE_MONTHLY_ID : env.STRIPE_PRICE_YEARLY_ID;
   const stripe = new Stripe(env.STRIPE_SECRET_KEY);
 
-  const successUrl = env.STRIPE_SUCCESS_URL ?? "https://golf-charity-frontend-bice.vercel.app/subscription-success?session_id={CHECKOUT_SESSION_ID}";
-  const cancelUrl = env.STRIPE_CANCEL_URL ?? "https://golf-charity-frontend-bice.vercel.app/subscribe";
+  const successUrl = env.STRIPE_SUCCESS_URL ?? "http://golf-charity-frontend-bice.vercel.app/subscription-success?session_id={CHECKOUT_SESSION_ID}";
+  const cancelUrl = env.STRIPE_CANCEL_URL ?? "http://golf-charity-frontend-bice.vercel.app/subscribe";
 
   // Create a new subscription checkout session. Webhook will activate it in MongoDB.
   const session = await stripe.checkout.sessions.create({
