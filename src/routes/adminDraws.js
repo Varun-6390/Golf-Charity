@@ -152,10 +152,10 @@ router.post("/:monthKey/simulate", requireAuth, requireRole("admin"), async (req
   const monthDate = parseMonthKey(req.params.monthKey);
   if (!monthDate) return res.status(400).json({ error: "Invalid monthKey. Expected YYYY-MM." });
 
-  const parsed = simulateSchema.safeParse(req.body);
+const parsed = simulateSchema.safeParse(req.body || {});
 if (!parsed.success) return res.status(400).json({ error: parsed.error.flatten() });
 
-const { logicType } = parsed.data; 
+const logicType = parsed.data.logicType || "random";
 
   console.log(`[SIMULATE] Month: ${req.params.monthKey}, Mode: ${logicType}`);
   
